@@ -3,241 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechAriel | Digital Solutions & Cyber Security</title>
+    <title>
+      TechAriel Digital cooperation - Your Digital Solutions Partner
+    </title>
     <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
       body {
         font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
       }
       header {
-        background: #333;
-        color: #fff;
-        padding: 1rem 0;
+        background: url("img/Tech Ariel.png ") no-repeat center center/cover;
+        color: rgb(22, 237, 245);
+        padding: 20px 0;
+        text-align: center;
+        height: 70vh;
       }
-      header .container {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
+      nav {
+        margin: 20px 0;
+        height: 50vh;
       }
-      header h1 {
-        font-size: 2rem;
-      }
-      nav ul {
-        list-style: none;
-        display: flex;
-      }
-      nav ul li {
-        margin-left: 1.5rem;
-      }
-      nav ul li a {
-        color: #fff;
+      nav a {
+        margin: 0 15px;
+        color: rgb(240, 246, 247);
         text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
+        margin-bottom: 101px;
       }
-      nav ul li a:hover {
-        color: #f0a500;
+      section {
+        padding: 20px;
+        margin: 20px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      .hero {
-        background: url("Tech Ariel.png") no-repeat center center/cover;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      h2 {
+        color: #007bff;
+      }
+      footer {
         text-align: center;
-        color: #fff;
-        padding: 0 1rem;
+        padding: 10px 0;
+        background: #007bff;
+        color: white;
+        bottom: 0;
+        width: 100%;
       }
-      .hero h2 {
-        font-size: 3rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      }
-      .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 2rem 1rem;
-      }
-      section h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-        color: #333;
-      }
-      /* Services Grid */
-      .services {
+      .services-grid,
+      .testimonials-grid,
+      .blogs-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
+        gap: 20px;
       }
-      .service {
+      .service-card,
+      .testimonial,
+      .blog {
+        background: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .service-card {
         position: relative;
         height: 200px;
         background-size: cover;
         background-position: center;
-        border-radius: 8px;
         overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s;
       }
-      .service:hover {
-        transform: translateY(-5px);
+      .service-card:hover {
+        transform: scale(1.05);
       }
-      .service::after {
-        content: "";
+      .service-name {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
+        right: 0;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s;
       }
-      .service:hover::after {
+      .service-card:hover .service-name {
         opacity: 1;
       }
-      .service span {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: bold;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+      .team {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
       }
-      .service:hover span {
-        opacity: 1;
-      }
-      footer {
-        background: #333;
-        color: #fff;
-        padding: 1rem;
+      .team-member {
+        width: 200px;
+        margin: 10px;
         text-align: center;
       }
-      /* Responsive */
-      @media (max-width: 992px) {
-        .services {
+      .team-member img {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .contact-form button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .contact-form button:hover {
+        background: #0056b3;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .services-grid,
+        .testimonials-grid,
+        .blogs-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .services-grid,
+        .testimonials-grid,
+        .blogs-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
       @media (max-width: 600px) {
-        .services {
+        .services-grid,
+        .testimonials-grid,
+        .blogs-grid {
           grid-template-columns: 1fr;
-        }
-        .hero h2 {
-          font-size: 2rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
     <header>
-      <div class="container">
-        <h1>TechAriel</h1>
-        <nav>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+      <img
+        src="img/img.png"
+        alt="TechAriel Logo"
+        style="
+          max-width: 300px;
+          margin-left: 1100px;
+          margin-botto: 200px;
+          margin-right: 00px;
+        "
+      />
+      <h1></h1>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2></h2>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="container">
-      <h2>Our Services</h2>
-      <div class="services">
-        <!-- Cyber Security -->
-        <div class="service" style="background-image: url('cyber.jpg')">
-          <span>Cyber Security</span>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        At TechAriel, we are dedicated to providing top-notch digital solutions
+        to help businesses thrive in the online world. Our mission is to empower
+        our clients with innovative strategies and technology.
+      </p>
+      <h3>Meet Our Team</h3>
+      <div class="team">
+        <div class="team-member">
+          <img src="img/hamzer.jpg" alt="Team Member 1" />
+          <p><strong>Hamza Muhammad Yahaya</strong></p>
+          <p>Founder</p>
         </div>
-        <!-- Web Designing -->
-        <div class="service" style="background-image: url('code.jpg')">
-          <span>Web Designing</span>
+        <div class="team-member">
+          <img src="img/Ak.jpg" alt="Team Member 2" />
+          <p><strong>Abubakar Basheer Abubakar</strong></p>
+          <p>Co-founder</p>
         </div>
-        <!-- Content Creation -->
-        <div class="service" style="background-image: url('content.jpg')">
-          <span>Content Creation</span>
+        <div class="team-member">
+          <img src="img/mub.jpeg" alt="Team Member 3" />
+          <p><strong>Muhammad Bello Muhammad</strong></p>
+          <p></p>
         </div>
-        <!-- Advertisements -->
-        <div class="service" style="background-image: url('social.jpg')">
-          <span>Advertisements</span>
+        <div class="team-member">
+          <img src="img/dee.jpg" alt="Team Member 4" />
+          <p><strong>Khadija Ibrahim</strong></p>
+          <p>Design Expert</p>
         </div>
-        <!-- Online Classes -->
-        <div class="service" style="background-image: url('online.jpg')">
-          <span>Online Classes</span>
-        </div>
-        <!-- YouTube Tutorials -->
-        <div class="service" style="background-image: url('youtube.jpg')">
-          <span>YouTube Tutorials</span>
-        </div>
-        <!-- Entertainment -->
-        <div class="service" style="background-image: url('enatr.jpg')">
-          <span>Entertainment</span>
-        </div>
-        <!-- Digital Marketing -->
-        <div
-          class="service"
-          style="background-image: url('digital-marketing.jpg')"
-        >
-          <span>Digital Marketing</span>
+        <div class="team-member">
+          <img src="img/makama.jpeg" alt="Team Member 4" />
+          <p><strong>Umar Muhammad Makama</strong></p>
+          <p></p>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="container">
-      <h2>About TechAriel</h2>
-      <p>
-        At TechAriel, we are committed to providing innovative digital solutions
-        to help your business thrive. Our team of experts specializes in a wide
-        range of services—from cybersecurity and web design to digital
-        marketing—ensuring that every aspect of your online presence is
-        optimized for success.
-      </p>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div
+          class="service-card"
+          style="background-image: url('img/cyber.jpg')"
+        >
+          <div class="service-name">Cyber Security Programs</div>
+        </div>
+        <div class="service-card" style="background-image: url('img/code.jpg')">
+          <div class="service-name">Web Designing</div>
+        </div>
+        <div
+          class="service-card"
+          style="background-image: url('img/content.jpg')"
+        >
+          <div class="service-name">Content Creation</div>
+        </div>
+        <div
+          class="service-card"
+          style="background-image: url('img/digital-marketing.jpg')"
+        >
+          <div class="service-name">Digital Marketing</div>
+        </div>
+        <div
+          class="service-card"
+          style="background-image: url('img/course-5.jpg')"
+        >
+          <div class="service-name">Online Classes</div>
+        </div>
+        <div
+          class="service-card"
+          style="background-image: url('img/youtube.jpg')"
+        >
+          <div class="service-name">YouTube Tutorials</div>
+        </div>
+        <div
+          class="service-card"
+          style="background-image: url('img/enatr.jpg')"
+        >
+          <div class="service-name">Entertainment Services</div>
+        </div>
+        <div class="service-card" style="background-image: url('img/ads.png')">
+          <div class="service-name">Ads creation/management</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container">
+    <section id="contact">
       <h2>Contact Us</h2>
-      <p>
-        Have questions or want to work with us? Get in touch at
-        <a href="mailto:info@techariel.com">info@techariel.com</a>
-      </p>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
 
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 TechAriel. All Rights Reserved.</p>
+      <p>&copy; 2023 TechAriel. All Rights Reserved.</p>
     </footer>
-
-    <!-- Optional JavaScript for smooth scrolling -->
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
   </body>
 </html>
